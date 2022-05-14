@@ -29,7 +29,36 @@ balancetotal.innerText=newbaltotal;
 
 // withdraw
 
+document.getElementById('with-btn').addEventListener('click',function(){
 
+  const withdrawinput = document.getElementById('with-input');
+  const withdrawAmountText=withdrawinput.value;
+    const newwithdrawAmount = parseFloat(withdrawAmountText);
+
+    //Set withdraw
+
+    const withdrawtotal =document.getElementById('withdraw');
+    const previouswithdrawtext=withdrawtotal.innerText;
+    const previouswithdrawtotal= parseFloat(previouswithdrawtext);
+
+    const newwithtotal= previouswithdrawtotal + newwithdrawAmount;
+    withdrawtotal.innerText=newwithtotal;
+
+    //clear withdraw input
+
+    withdrawinput.value= '';
+
+     //Update balance
+    const balancetotal=document.getElementById('balance-total');
+    const previousbaltext=balancetotal.innerText;
+    const previousbaltotal=parseFloat(previousbaltext);
+    const newbaltotal=previousbaltotal - newwithdrawAmount;
+    balancetotal.innerText=newbaltotal;
+
+
+
+
+})
 
 
 
